@@ -2,8 +2,6 @@ version: 2.1
 
 orbs:
   docker: circleci/docker@2.0.1
-
-working_dir: &working_dir ~/app
   
 jobs:
   example-job:
@@ -14,9 +12,9 @@ jobs:
     resource_class: large
     steps:
       - docker/build:
-          dockerfile: /home/Dockerfile 
+          dockerfile: Dockerfile 
           no_output_timeout: '1h' 
-          image: ubuntu
+          image: Dockerfile
   example-job2:
     parallelism: 15
     docker:
@@ -25,9 +23,9 @@ jobs:
     resource_class: large
     steps:
       - docker/build:
-          dockerfile: /home/Dockerfile 
+          dockerfile: Dockerfile 
           no_output_timeout: '1h' 
-          image: ubuntu 
+          image: Dockerfile 
 
 workflows:
   example-workflow:
