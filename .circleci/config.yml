@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@2.0.1
+  
+jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - docker/build:
+          dockerfile: Dockerfile 
+          no_output_timeout: '1h' 
+          image: ubuntu 
+
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
