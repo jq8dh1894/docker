@@ -8,6 +8,7 @@ jobs:
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
+    resource_class: large
     steps:
       - docker/build:
           dockerfile: Dockerfile 
