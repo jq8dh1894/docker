@@ -12,7 +12,7 @@ jobs:
     resource_class: large
     steps:
       - docker/build:
-          dockerfile: Dockerfile 
+          dockerfile: /Dockerfile 
           no_output_timeout: '1h' 
           image: ubuntu
   example-job2:
@@ -23,7 +23,7 @@ jobs:
     resource_class: large
     steps:
       - docker/build:
-          dockerfile: Dockerfile 
+          dockerfile: /Dockerfile 
           no_output_timeout: '1h' 
           image: ubuntu 
 
